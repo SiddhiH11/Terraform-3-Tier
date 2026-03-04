@@ -3,7 +3,7 @@ terraform {
     bucket         = "easycrud-terraform-state"
     key            = "dev/terraform.tfstate"
     region         = "ap-south-1"
-    dynamodb_table = "use_lockfile"
+    use_lockfile   = true
     encrypt        = true
   }
 }

@@ -1,9 +1,19 @@
+# terraform {
+#   backend "s3" {
+#     bucket         = "easycrud-terraform-state"
+#     key            = "dev/terraform.tfstate"
+#     region         = "ap-south-1"
+#     use_lockfile   = true
+#     encrypt        = true
+#   }
+# }
+
+
 terraform {
   backend "s3" {
-    bucket         = "easycrud-terraform-state"
+    bucket         = "your-terraform-state-bucket"
     key            = "dev/terraform.tfstate"
     region         = "ap-south-1"
-    use_lockfile   = true
-    encrypt        = true
+    dynamodb_table = "terraform-lock-table"
   }
 }
